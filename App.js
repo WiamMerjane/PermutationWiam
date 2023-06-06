@@ -58,41 +58,24 @@ export default function App() {
   };
 
   return (
-    <NavigationContainer>
+    
       <View style={styles.container}>
         <Header />
         
           <View style={{ flex: 1 }}>
-            <Tab.Navigator>
-              
-              
-              
-              <Tab.Screen
-                name="Login"
-                component={() => (
-                  <Connexion handleConnexion={handleConnexion} />
-                )}
-                options={{
-                  tabBarIcon: ({ color, size }) => (
-                    <Icon name="sign-in" color={color} size={size} />
-                  ),
-                }}
-              />
-              <Tab.Screen
-                name="Inscription"
-                component={Inscription}
-                options={{
-                  tabBarIcon: ({ color, size }) => (
-                    <Icon name="user-plus" color={color} size={size} />
-                  ),
-                }}
-              />
-            </Tab.Navigator>
+          <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Connexion" component={Connexion} />
+        <Stack.Screen name="Inscription" component={Inscription} />
+        {/* Ajoutez d'autres écrans si nécessaire */}
+      </Stack.Navigator>
+    </NavigationContainer>
+           
             <Footer />
           </View>
        
       </View>
-    </NavigationContainer>
+    
   );
 }
 
